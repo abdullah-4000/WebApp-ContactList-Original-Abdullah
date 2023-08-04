@@ -1,0 +1,149 @@
+<div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+    </svg>
+</div>
+
+<div class="main-content center">
+
+    <h1> Contact List Form </h1>
+
+    <br><br>
+
+    <div class="mat-elevation-z16">
+
+        <h2> Contact Details</h2>
+
+        <mat-card class="centerStyle">
+            <mat-card-content>
+                <form class="dataform" [formGroup]="CategoryDetailsForm">
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            Name
+                        </mat-label>
+                        <input matInput type="text" formControlName="categoryName" required
+                            placeholder="Enter Your Name">
+                        <mat-error>
+                            {{showErrorMessageName('categoryName')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <br><br>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            Email
+                        </mat-label>
+                        <input matInput type="email" formControlName="email" required placeholder="Enter Your Email">
+                        <mat-error>
+                            {{showErrorMessageEmail('email')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <br><br>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            Contact Number
+                        </mat-label>
+                        <input matInput type="number" formControlName="contactNumber" required
+                            placeholder="Enter Your Phone Number">
+                        <mat-error>
+                            {{showErrorMessageContactNumber('phoneNumber')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <br><br>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>
+                            Company Name
+                        </mat-label>
+                        <input matInput type="text" formControlName="companyName" required
+                            placeholder="Enter Your Campany Name">
+                        <mat-error>
+                            {{showErrorMessageCompanyName('CompanyName')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- <a type="button" class="light-blue-text mx-2">
+                        <mdb-icon fab icon="github"></mdb-icon>
+                      </a> -->
+
+                    <br><br>
+
+
+                    <mat-checkbox formControlName="active">
+                        Active
+                    </mat-checkbox>
+                </form>
+            </mat-card-content>
+
+
+            <mat-card-actions>
+
+                <button class="btn" mat-raised-button (click)="cancelTestCategory()">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Cancel
+
+                </button>
+
+                <button class="reset" mat-raised-button (click)="resetForm()" [disabled]="!CategoryDetailsForm.dirty">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Reset
+
+                </button>
+
+                <button class="save" mat-raised-button (click)="saveTestCategory()"
+                    [disabled]="!CategoryDetailsForm.valid || !CategoryDetailsForm.dirty">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Save
+
+                </button>
+
+            </mat-card-actions>
+
+        </mat-card>
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+
+    </div>
+
+
+
+</div>
